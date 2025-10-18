@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import TeamCarousel from "@/components/team-carousel"
@@ -114,18 +113,18 @@ export default function About() {
               Ready to transform your ideas into reality? Join hundreds of students already building the future.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link 
-                href="/join"
+              <button 
+                onClick={() => window.location.href = '/join'}
                 className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 hover:scale-105 transition-all text-sm font-medium text-center"
               >
                 Get Started
-              </Link>
-              <Link 
-                href="/projects"
+              </button>
+              <button 
+                onClick={() => window.location.href = '/projects'}
                 className="px-6 py-3 border border-border rounded-lg hover:bg-secondary hover:scale-105 transition-all text-sm font-medium text-center"
               >
                 Learn More
-              </Link>
+              </button>
             </div>
           </div>
         </div>

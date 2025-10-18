@@ -26,17 +26,34 @@ export default function Contact() {
     e.preventDefault()
     setIsLoading(true)
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData)
-      setSubmitted(true)
-      setIsLoading(false)
+    try {
+      // Simple mailto fallback - opens user's email client
+      const subject = encodeURIComponent(`Contact Form: ${formData.subject}`)
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Subject: ${formData.subject}\n\n` +
+        `Message:\n${formData.message}`
+      )
       
+      const mailtoLink = `mailto:atharva.rahate374@gmail.com?subject=${subject}&body=${body}`
+      
+      // Open mailto link
+      window.open(mailtoLink, '_blank')
+      
+      // Show success message
+      setSubmitted(true)
       setTimeout(() => {
         setFormData({ name: "", email: "", subject: "", message: "" })
         setSubmitted(false)
-      }, 3000)
-    }, 1000)
+      }, 5000)
+      
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Please make sure you have an email client configured, or contact us directly at atharva.rahate374@gmail.com')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const contactMethods = [
@@ -249,10 +266,25 @@ export default function Contact() {
                 {submitted && (
                   <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-center">
                     <p className="text-green-600 font-medium text-sm">
-                      Thank you for your message! We'll get back to you within 24 hours.
+                      Your email client should have opened with a pre-filled message. If not, please send your message directly to: 
+                      <a href="mailto:atharva.rahate374@gmail.com" className="font-semibold underline ml-1">
+                        atharva.rahate374@gmail.com
+                      </a>
                     </p>
                   </div>
                 )}
+
+                <div className="mt-4 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                  <p className="text-blue-600 text-sm text-center">
+                    <strong>Alternative:</strong> You can also email us directly at{" "}
+                    <a 
+                      href="mailto:atharva.rahate374@gmail.com" 
+                      className="font-semibold underline hover:text-blue-800 transition-colors"
+                    >
+                      atharva.rahate374@gmail.com
+                    </a>
+                  </p>
+                </div>
               </form>
             </div>
           </div>
