@@ -10,34 +10,34 @@ export default function About() {
     <main className="min-h-screen bg-background">
       <Navigation />
 
-      <section className="pt-20 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="mb-12 sm:mb-16 lg:mb-20 text-center lg:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
+      <section className="pt-16 sm:pt-20 md:pt-24 lg:pt-32 pb-8 sm:pb-12 md:pb-16 lg:pb-20 px-3 sm:px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 text-center">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight px-2" style={{ fontFamily: "var(--font-display)" }}>
             About <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Tactiqe</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto lg:mx-0">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto px-2">
             Tactiqe is not just another learning platform. It's a live company simulation where students don't just
             learn.... they collaborate, fail, iterate, and build something worth showcasing.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-16 sm:mb-20 lg:mb-24">
-          <div className="space-y-6">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6" style={{ fontFamily: "var(--font-display)" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+          <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-center lg:text-left" style={{ fontFamily: "var(--font-display)" }}>
               Our Mission
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-center lg:text-left">
               We bridge the gap between learning and doing. Tactiqe creates a collaborative space where aspiring
               developers, designers, and innovators work together to build real, end-to-end projects that replicate the structure and discipline of an actual company environment.
             </p>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-center lg:text-left">
               The name "Tactiqe" comes from the word tactic, symbolizing strategic action. Every project, every
               discussion, and every deployment is intentional and results-oriented.
             </p>
           </div>
 
-          <div className="bg-secondary/30 backdrop-blur-sm border border-border rounded-xl p-6 sm:p-8 hover:bg-secondary/40 transition-all duration-300">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Why Tactiqe?</h3>
+          <div className="bg-secondary/30 backdrop-blur-sm border border-border rounded-xl p-4 sm:p-6 md:p-8 hover:bg-secondary/40 transition-all duration-300 order-1 lg:order-2">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 text-center lg:text-left">Why Tactiqe?</h3>
             <ul className="space-y-3 sm:space-y-4">
               {[
                 "Hands-on learning through real projects",
@@ -46,17 +46,17 @@ export default function About() {
                 "Open-source innovation platform",
                 "Community-driven development",
               ].map((item, index) => (
-                <li key={index} className="flex gap-3 items-start group">
-                  <CheckCircle className="text-primary flex-shrink-0 mt-0.5 sm:mt-1 group-hover:scale-110 transition-transform" size={18} />
-                  <span className="text-sm sm:text-base">{item}</span>
+                <li key={index} className="flex gap-2 sm:gap-3 items-start group">
+                  <CheckCircle className="text-primary flex-shrink-0 mt-0.5 sm:mt-1 group-hover:scale-110 transition-transform" size={16} />
+                  <span className="text-xs sm:text-sm md:text-base">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-secondary/50 to-secondary/20 backdrop-blur-sm border border-border rounded-xl p-6 sm:p-8 lg:p-12 mb-16 sm:mb-20 lg:mb-24 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center" style={{ fontFamily: "var(--font-display)" }}>
+        <div className="bg-gradient-to-br from-secondary/50 to-secondary/20 backdrop-blur-sm border border-border rounded-xl p-4 sm:p-6 md:p-8 lg:p-12 mb-12 sm:mb-16 md:mb-20 lg:mb-24 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center" style={{ fontFamily: "var(--font-display)" }}>
             The Three Pillars
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
@@ -66,62 +66,62 @@ export default function About() {
               { title: "Deploy", desc: "Publish projects and gain professional exposure" },
             ].map((pillar, index) => (
               <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-primary/20 transition-colors">
+                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary group-hover:scale-110 transition-transform">
                     {index + 1}
                   </div>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-primary transition-colors">{pillar.title}</h3>
-                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{pillar.desc}</p>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 group-hover:text-primary transition-colors">{pillar.title}</h3>
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base leading-relaxed px-2">{pillar.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mb-16 sm:mb-20">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 sm:mb-12 text-center" style={{ fontFamily: "var(--font-display)" }}>
+        <div className="mb-12 sm:mb-16 md:mb-20">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 md:mb-12 text-center" style={{ fontFamily: "var(--font-display)" }}>
             Meet Our Team
           </h2>
           <TeamCarousel />
         </div>
 
         {/* Additional sections for better content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 mb-16 sm:mb-20">
-          <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-border rounded-xl p-6 sm:p-8 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-            <h3 className="text-xl sm:text-2xl font-bold mb-6">Our Values</h3>
-            <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-12 sm:mb-16 md:mb-20">
+          <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-border rounded-xl p-4 sm:p-6 md:p-8 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 text-center md:text-left">Our Values</h3>
+            <div className="space-y-3 sm:space-y-4">
               {[
                 { title: "Excellence", desc: "We strive for quality in everything we build" },
                 { title: "Collaboration", desc: "Together we achieve more than alone" },
                 { title: "Innovation", desc: "We embrace new ideas and technologies" },
                 { title: "Learning", desc: "Continuous growth is at our core" },
               ].map((value, index) => (
-                <div key={index} className="flex items-start gap-3 group">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 group-hover:scale-125 transition-transform"></div>
-                  <div>
-                    <h4 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors">{value.title}</h4>
-                    <p className="text-muted-foreground text-xs sm:text-sm">{value.desc}</p>
+                <div key={index} className="flex items-start gap-2 sm:gap-3 group">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-1.5 sm:mt-2 group-hover:scale-125 transition-transform flex-shrink-0"></div>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-semibold text-xs sm:text-sm md:text-base group-hover:text-primary transition-colors">{value.title}</h4>
+                    <p className="text-muted-foreground text-xs sm:text-sm break-words">{value.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          
-          <div className="bg-gradient-to-br from-accent/10 to-primary/10 border border-border rounded-xl p-6 sm:p-8 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4">Join Our Community</h3>
-            <p className="text-sm sm:text-base text-muted-foreground mb-6">
+
+          <div className="bg-gradient-to-br from-accent/10 to-primary/10 border border-border rounded-xl p-4 sm:p-6 md:p-8 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-center md:text-left">Join Our Community</h3>
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-4 sm:mb-6 text-center md:text-left leading-relaxed">
               Ready to transform your ideas into reality? Join hundreds of students already building the future.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button 
+            <div className="flex flex-col gap-3 sm:gap-4">
+              <button
                 onClick={() => window.location.href = '/join'}
-                className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 hover:scale-105 transition-all text-sm font-medium text-center"
+                className="w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 hover:scale-105 transition-all text-xs sm:text-sm font-medium text-center"
               >
                 Get Started
               </button>
-              <button 
+              <button
                 onClick={() => window.location.href = '/projects'}
-                className="px-6 py-3 border border-border rounded-lg hover:bg-secondary hover:scale-105 transition-all text-sm font-medium text-center"
+                className="w-full px-4 sm:px-6 py-2.5 sm:py-3 border border-border rounded-lg hover:bg-secondary hover:scale-105 transition-all text-xs sm:text-sm font-medium text-center"
               >
                 Learn More
               </button>
