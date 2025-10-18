@@ -1,11 +1,80 @@
 "use client"
 
+import { useEffect } from "react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import TeamCarousel from "@/components/team-carousel"
 import { CheckCircle } from "lucide-react"
 
 export default function About() {
+  useEffect(() => {
+    // SEO metadata for about page
+    document.title = "About Tactiqe - Open Source Community | Strategic Action Through Collaborative Learning"
+    
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Learn about Tactiqe, India\'s premier open source community. Discover our mission to bridge learning and doing through collaborative projects, tactical approaches, and strategic action in software development.')
+    }
+
+    // Add structured data for about page
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'About Tactiqe - Open Source Community',
+      description: 'Tactiqe is an open source community that bridges the gap between learning and doing through collaborative projects and tactical learning approaches.',
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'Tactiqe',
+        foundingDate: '2024',
+        description: 'Open source community fostering innovation through collaborative project development, tactical learning, and strategic action.',
+        mission: 'To bridge the gap between learning and doing through collaborative projects that replicate real company environments.',
+        values: ['Excellence', 'Collaboration', 'Innovation', 'Learning'],
+        founder: {
+          '@type': 'Person',
+          name: 'Atharva Rahate',
+          jobTitle: 'Founder & Lead Developer'
+        },
+        employee: [
+          {
+            '@type': 'Person',
+            name: 'Atharva Rahate',
+            jobTitle: 'Founder & Lead Developer'
+          },
+          {
+            '@type': 'Person',
+            name: 'Khushbu Mankare',
+            jobTitle: 'Head of Operations and Onboarding'
+          },
+          {
+            '@type': 'Person',
+            name: 'Rajas Patil',
+            jobTitle: 'Project Lead and Manager'
+          },
+          {
+            '@type': 'Person',
+            name: 'Dhananjay Suryawanshi',
+            jobTitle: 'Project Lead and Manager'
+          },
+          {
+            '@type': 'Person',
+            name: 'Mrunal Pawar',
+            jobTitle: 'Marketing Head and Operations Lead'
+          }
+        ]
+      }
+    }
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(jsonLd)
+    document.head.appendChild(script)
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script)
+      }
+    }
+  }, [])
   return (
     <main className="min-h-screen bg-background">
       <Navigation />

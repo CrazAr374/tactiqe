@@ -12,7 +12,7 @@ export default function Hero() {
 
   useEffect(() => {
     setIsLoaded(true)
-    
+
     // Generate grid cells
     const cells = Array.from({ length: 100 }, (_, i) => ({
       id: i,
@@ -60,7 +60,7 @@ export default function Hero() {
   ]
 
   return (
-    <section 
+    <section
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 overflow-hidden"
     >
@@ -78,7 +78,7 @@ export default function Hero() {
             style={{ transform: "translate(-50%, -50%)" }}
           ></div>
         </div>
-        
+
         {/* Enhanced interactive grid with better patterns */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(242,201,76,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(242,201,76,0.03)_1px,transparent_1px)] bg-[size:40px_40px] sm:bg-[size:60px_60px] animate-pulse"></div>
@@ -86,11 +86,10 @@ export default function Hero() {
             {gridCells.map((cell) => (
               <div
                 key={cell.id}
-                className={`aspect-square rounded-sm transition-all duration-700 ${
-                  cell.active 
-                    ? 'bg-gradient-to-br from-primary/30 to-accent/20 shadow-lg shadow-primary/20 scale-125 rotate-45' 
-                    : 'bg-border/10 hover:bg-primary/15 hover:scale-110'
-                }`}
+                className={`aspect-square rounded-sm transition-all duration-700 ${cell.active
+                  ? 'bg-gradient-to-br from-primary/30 to-accent/20 shadow-lg shadow-primary/20 scale-125 rotate-45'
+                  : 'bg-border/10 hover:bg-primary/15 hover:scale-110'
+                  }`}
                 style={{
                   animationDelay: `${cell.delay}s`,
                   transform: `scale(${cell.active ? 1.25 : 1}) rotate(${cell.active ? 45 : 0}deg)`,
@@ -101,7 +100,7 @@ export default function Hero() {
         </div>
 
         {/* Enhanced mouse follower with multiple layers */}
-        <div 
+        <div
           className="absolute w-96 h-96 pointer-events-none transition-all duration-500"
           style={{
             left: `${mousePosition.x}%`,
@@ -150,9 +149,9 @@ export default function Hero() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed px-2">
-            Tactiqe is a student-led, open-source initiative that bridges the gap between learning and doing.
-            Collaborate with peers, build real-world solutions, deploy projects that matter, and gain professional
-            exposure. Transform your ideas into tangible impact within a thriving community of innovators.
+            Tactiqe is India's premier open source community and student-led initiative that bridges the gap between learning and doing through tactical approaches.
+            Collaborate with developers, build real-world software projects, deploy innovative solutions, and gain professional
+            exposure. Transform your ideas into tangible impact within our thriving open source community of innovators and strategic thinkers.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-4">

@@ -1,9 +1,9 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { ExternalLink, Users, ChevronDown, ChevronUp } from "lucide-react"
-import { useState } from "react"
 
 const allProjects = [
   {
@@ -75,6 +75,56 @@ const allProjects = [
 
 export default function Projects() {
   const [expandedProjects, setExpandedProjects] = useState<Set<number>>(new Set())
+
+  useEffect(() => {
+    // SEO metadata for projects page
+    document.title = "Open Source Projects | Tactiqe Community - Collaborative Software Development"
+    
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Explore innovative open source projects built by Tactiqe community. From AI-powered tools to web applications, discover collaborative software development projects by student developers.')
+    }
+
+    // Add structured data for projects page
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Tactiqe Open Source Projects',
+      description: 'Collection of innovative open source projects built by the Tactiqe community through collaborative development and tactical learning.',
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: allProjects.length,
+        itemListElement: allProjects.map((project, index) => ({
+          '@type': 'SoftwareApplication',
+          position: index + 1,
+          name: project.title,
+          description: project.description,
+          applicationCategory: project.domains.join(', '),
+          operatingSystem: 'Web',
+          url: project.link || 'https://tactiqe.in/projects',
+          author: {
+            '@type': 'Organization',
+            name: 'Tactiqe Community'
+          },
+          contributor: project.contributors.map(name => ({
+            '@type': 'Person',
+            name: name
+          }))
+        }))
+      }
+    }
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(jsonLd)
+    document.head.appendChild(script)
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script)
+      }
+    }
+  }, [])
 
   const toggleExpanded = (projectId: number, e: React.MouseEvent) => {
     e.stopPropagation() // Prevent opening the project link
