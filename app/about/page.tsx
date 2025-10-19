@@ -38,27 +38,36 @@ export default function About() {
           {
             '@type': 'Person',
             name: 'Atharva Rahate',
-            jobTitle: 'Founder & Lead Developer'
-          },
-          {
-            '@type': 'Person',
-            name: 'Khushbu Mankare',
-            jobTitle: 'Head of Operations and Onboarding'
+            jobTitle: 'Founder & Lead Developer',
+            email: 'atharva.rahate374@gmail.com',
+            sameAs: ['https://linkedin.com/in/atharvarahate', 'https://github.com/atharvarahate']
           },
           {
             '@type': 'Person',
             name: 'Rajas Patil',
-            jobTitle: 'Project Lead and Manager'
+            jobTitle: 'Core Developer',
+            email: 'patilrajas1234@gmail.com',
+            sameAs: ['https://www.linkedin.com/in/rajas-patil-6800a332b', 'https://github.com/rajaspatil']
           },
           {
             '@type': 'Person',
-            name: 'Dhananjay Suryawanshi',
-            jobTitle: 'Project Lead and Manager'
+            name: 'Dhananjay Suryavanshi',
+            jobTitle: 'Backend Developer',
+            sameAs: ['https://www.linkedin.com/in/dhananjay-suryavanshi-049299332', 'https://github.com/dhananjaysuryavanshi']
+          },
+          {
+            '@type': 'Person',
+            name: 'Khushbu Mankare',
+            jobTitle: 'Frontend Developer',
+            email: 'khushbumankare1@gmail.com',
+            sameAs: ['https://www.linkedin.com/in/khushbu-mankare-652014312', 'https://github.com/khushbumankare']
           },
           {
             '@type': 'Person',
             name: 'Mrunal Pawar',
-            jobTitle: 'Marketing Head and Operations Lead'
+            jobTitle: 'Web Developer',
+            email: 'Mrunalp098@gmail.com',
+            sameAs: ['https://www.linkedin.com/in/mrunal-pawar-485b7a386', 'https://github.com/mrunalpawar']
           }
         ]
       }

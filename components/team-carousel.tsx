@@ -7,6 +7,9 @@ interface TeamMember {
   id: number
   name: string
   role: string
+  linkedin?: string
+  github?: string
+  email?: string
 }
 
 const teamMembers: TeamMember[] = [
@@ -14,26 +17,41 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Atharva Rahate",
     role: "Founder & Lead Developer",
+    linkedin: "https://linkedin.com/in/atharvarahate",
+    github: "https://github.com/atharvarahate",
+    email: "atharva.rahate374@gmail.com"
   },
   {
     id: 2,
-    name: "Khushbu Mankare",
-    role: "Head of Operations and Onboarding",
+    name: "Rajas Patil",
+    role: "Core Developer",
+    linkedin: "https://www.linkedin.com/in/rajas-patil-6800a332b",
+    github: "https://github.com/rajaspatil",
+    email: "patilrajas1234@gmail.com"
   },
   {
     id: 3,
-    name: "Rajas Patil",
-    role: "Project Lead and Manager",
+    name: "Dhananjay Suryavanshi",
+    role: "Backend Developer",
+    linkedin: "https://www.linkedin.com/in/dhananjay-suryavanshi-049299332",
+    github: "https://github.com/dhananjaysuryavanshi",
+    email: "dhananjay.suryavanshi@tactiqe.in"
   },
   {
     id: 4,
-    name: "Dhananjay Suryawanshi",
-    role: "Project Lead and Manager",
+    name: "Khushbu Mankare",
+    role: "Frontend Developer",
+    linkedin: "https://www.linkedin.com/in/khushbu-mankare-652014312",
+    github: "https://github.com/khushbumankare",
+    email: "khushbumankare1@gmail.com"
   },
   {
     id: 5,
     name: "Mrunal Pawar",
-    role: "Marketing Head and Operations Lead",
+    role: "Web Developer",
+    linkedin: "https://www.linkedin.com/in/mrunal-pawar-485b7a386",
+    github: "https://github.com/mrunalpawar",
+    email: "Mrunalp098@gmail.com"
   },
 ]
 
@@ -127,15 +145,37 @@ export default function TeamCarousel() {
 
             {/* Social links */}
             <div className="flex justify-center gap-3 sm:gap-4 md:gap-6">
-              <button className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-secondary/50 rounded-full flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 group/social">
-                <Linkedin size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-muted-foreground group-hover/social:text-primary transition-colors" />
-              </button>
-              <button className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-secondary/50 rounded-full flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 group/social">
-                <Github size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-muted-foreground group-hover/social:text-primary transition-colors" />
-              </button>
-              <button className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-secondary/50 rounded-full flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 group/social">
-                <Mail size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-muted-foreground group-hover/social:text-primary transition-colors" />
-              </button>
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-secondary/50 rounded-full flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 group/social"
+                  title="LinkedIn Profile"
+                >
+                  <Linkedin size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-muted-foreground group-hover/social:text-primary transition-colors" />
+                </a>
+              )}
+              {member.github && (
+                <a
+                  href={member.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-secondary/50 rounded-full flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 group/social"
+                  title="GitHub Profile"
+                >
+                  <Github size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-muted-foreground group-hover/social:text-primary transition-colors" />
+                </a>
+              )}
+              {member.email && (
+                <a
+                  href={`mailto:${member.email}`}
+                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-secondary/50 rounded-full flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 group/social"
+                  title="Send Email"
+                >
+                  <Mail size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6 text-muted-foreground group-hover/social:text-primary transition-colors" />
+                </a>
+              )}
             </div>
 
             {/* Carousel indicators */}

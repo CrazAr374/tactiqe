@@ -41,6 +41,10 @@ export default function Navigation() {
               About
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
             </Link>
+            <Link href="/community" className="text-sm font-medium hover:text-primary transition-all hover:scale-105 relative group">
+              Community
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+            </Link>
             <Link href="/projects" className="text-sm font-medium hover:text-primary transition-all hover:scale-105 relative group">
               Projects
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
@@ -74,7 +78,7 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}>
           <div className="pb-4 pt-2 space-y-1">
             <Link
@@ -90,6 +94,13 @@ export default function Navigation() {
               onClick={closeMenu}
             >
               About
+            </Link>
+            <Link
+              href="/community"
+              className="block px-4 py-3 hover:bg-secondary/70 rounded-lg transition-all hover:translate-x-2 font-medium"
+              onClick={closeMenu}
+            >
+              Community
             </Link>
             <Link
               href="/projects"

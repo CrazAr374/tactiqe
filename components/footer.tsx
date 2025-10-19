@@ -81,6 +81,7 @@ export default function Footer() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About" },
+                { href: "/community", label: "Community" },
                 { href: "/projects", label: "Projects" },
                 { href: "/join", label: "Join Us" },
                 { href: "/contact", label: "Contact" },
