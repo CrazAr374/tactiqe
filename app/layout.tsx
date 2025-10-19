@@ -4,8 +4,18 @@ import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-display" })
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: 'swap',
+  preload: true
+})
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: 'swap',
+  preload: true
+})
 
 export const metadata: Metadata = {
   title: "Tactiqe - Open Source Community | Where Ideas Meet Execution Through Collaborative Learning",
@@ -30,7 +40,16 @@ export const metadata: Metadata = {
     "project-based learning",
     "real-world projects",
     "mentorship platform",
-    "coding community"
+    "coding community",
+    "hackathon community",
+    "startup community",
+    "tech innovation",
+    "collaborative learning",
+    "peer learning",
+    "skill development",
+    "professional development",
+    "career growth",
+    "networking platform"
   ],
   authors: [{ name: "Atharva Rahate", url: "https://tactiqe.in" }],
   creator: "Tactiqe Community",
@@ -78,11 +97,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
-  },
+  category: 'technology',
 }
 
 export default function RootLayout({
@@ -127,12 +142,16 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <link rel="canonical" href="https://tactiqe.in" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#f2c94c" />
         <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground`}>
         {children}
