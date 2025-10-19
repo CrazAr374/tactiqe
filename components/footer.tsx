@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-4 hover:scale-105 transition-transform">
               <img 
-                src="/logo.png" 
+                src="/logo_12.png" 
                 alt="Tactiqe Logo" 
                 className="h-8 sm:h-10 w-auto"
               />
@@ -139,23 +139,7 @@ export default function Footer() {
                 View Projects
               </Link>
             </div>
-            
-            {/* Contact Info */}
-            <div className="mt-6 pt-6 border-t border-border">
-              <p className="text-xs text-muted-foreground mb-2">Quick Contact</p>
-              <a 
-                href="mailto:atharva.rahate374@gmail.com"
-                className="text-sm text-primary hover:text-accent transition-colors block mb-1"
-              >
-                atharva.rahate374@gmail.com
-              </a>
-              <a 
-                href="tel:+918149812710"
-                className="text-sm text-primary hover:text-accent transition-colors block"
-              >
-                +91 8149812710
-              </a>
-            </div>
+
           </div>
         </div>
 
