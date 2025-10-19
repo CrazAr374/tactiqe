@@ -1,11 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Github, Linkedin, Mail, Users, Trophy, Star, MapPin, Calendar, TrendingUp, Search } from "lucide-react"
+import { Github, Linkedin, Mail, Users, MapPin, Search } from "lucide-react"
 import Link from "next/link"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
-import { topContributors, allMembers, regularMembers, getCommunityStats } from "@/lib/community-data"
+import { topContributors, allMembers, getCommunityStats } from "@/lib/community-data"
 
 export default function CommunityPage() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -72,9 +72,7 @@ export default function CommunityPage() {
     return matchesSearch && matchesDomain
   })
 
-  const filteredRegularMembers = filteredMembers.filter(member => 
-    !topContributors.some(contributor => contributor.id === member.id)
-  )
+
 
   return (
     <main className="min-h-screen bg-background">
@@ -147,70 +145,67 @@ export default function CommunityPage() {
             </p>
           </div>
 
-          <div className="space-y-4">
+          {/* Mobile: Stack layout, Tablet: 2 columns, Desktop: 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {topContributors.map((contributor, index) => (
               <div
                 key={contributor.id}
-                className="group p-4 bg-secondary/20 border border-border rounded-lg hover:border-primary/50 hover:bg-secondary/30 transition-all duration-200"
+                className="group p-4 bg-secondary/20 border border-border rounded-lg hover:border-primary/50 hover:bg-secondary/30 transition-all duration-200 flex flex-col h-full"
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    {/* Rank & Avatar */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold">
-                        {index + 1}
-                      </div>
-                      <div className="w-10 h-10 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center text-lg font-bold text-primary">
-                        {contributor.name.charAt(0)}
-                      </div>
-                    </div>
-                    
-                    {/* Info */}
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold">{contributor.name}</h3>
-                        <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded">
-                          {contributor.contributions} contributions
-                        </span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">{contributor.domain}</p>
-                      {contributor.location && (
-                        <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
-                          <MapPin size={12} />
-                          {contributor.location}
-                        </p>
-                      )}
-                    </div>
+                {/* Header with rank and avatar */}
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    {index + 1}
                   </div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center text-lg font-bold text-primary flex-shrink-0">
+                    {contributor.name.charAt(0)}
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1 mb-4">
+                  <div className="mb-2">
+                    <h3 className="font-semibold text-sm sm:text-base mb-1">{contributor.name}</h3>
+                    <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded inline-block">
+                      {contributor.contributions} contributions
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-2">{contributor.domain}</p>
+                  {contributor.location && (
+                    <p className="text-xs text-muted-foreground flex items-center gap-1">
+                      <MapPin size={12} />
+                      {contributor.location}
+                    </p>
+                  )}
+                </div>
 
-                  {/* Social Links */}
-                  <div className="flex gap-2">
-                    <a
-                      href={contributor.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-8 h-8 bg-secondary/50 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                      title="GitHub"
-                    >
-                      <Github size={14} />
-                    </a>
-                    <a
-                      href={contributor.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-8 h-8 bg-secondary/50 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                      title="LinkedIn"
-                    >
-                      <Linkedin size={14} />
-                    </a>
-                    <a
-                      href={`mailto:${contributor.email}`}
-                      className="w-8 h-8 bg-secondary/50 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                      title="Email"
-                    >
-                      <Mail size={14} />
-                    </a>
-                  </div>
+                {/* Social Links - Always at bottom */}
+                <div className="flex gap-2 justify-center sm:justify-start">
+                  <a
+                    href={contributor.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 bg-secondary/50 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                    title="GitHub"
+                  >
+                    <Github size={14} />
+                  </a>
+                  <a
+                    href={contributor.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 bg-secondary/50 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                    title="LinkedIn"
+                  >
+                    <Linkedin size={14} />
+                  </a>
+                  <a
+                    href={`mailto:${contributor.email}`}
+                    className="w-8 h-8 bg-secondary/50 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                    title="Email"
+                  >
+                    <Mail size={14} />
+                  </a>
                 </div>
               </div>
             ))}
