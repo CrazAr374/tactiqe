@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,9 +24,9 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-18">
           <Link href="/" className="flex items-center hover:scale-105 transition-transform" onClick={closeMenu}>
-            <img 
-              src="/logo.png" 
-              alt="Tactiqe Logo" 
+            <img
+              src="/logo.png"
+              alt="Tactiqe Logo"
               className="h-8 sm:h-10 w-auto"
             />
           </Link>
