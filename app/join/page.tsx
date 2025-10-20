@@ -105,9 +105,6 @@ export default function Join() {
                 src="https://docs.google.com/forms/d/e/1FAIpQLScZvLCWhiaYJ2E4c3l1TbbnLruauDXT-IPZUFgvhtxuJ-cWxQ/viewform?embedded=true"
                 width="100%"
                 height="2130"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
                 title="Tactiqe Application Form"
                 className="w-full"
                 style={{ 
