@@ -149,6 +149,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#f2c94c" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="google-site-verification" content="hkjnEPg1WJwLVd-MG7uzBdJS5d9H5zZcBzbT1THJfnc" />
 
         <link rel="manifest" href="/site.webmanifest" />
         
