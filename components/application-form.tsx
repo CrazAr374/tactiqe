@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { trackEvent } from "./analytics"
 import { Send, User, Mail, Phone, MapPin, Code, Briefcase, MessageSquare } from "lucide-react"
 
 interface FormData {
@@ -63,10 +64,14 @@ GitHub: ${formData.github}
 
       if (response.ok) {
         setSubmitted(true)
+        // Track successful form submission
+        trackEvent('submit', 'application', 'backup_form_success')
       } else {
         throw new Error('Failed to submit')
       }
     } catch (error) {
+      // Track form submission error
+      trackEvent('error', 'application', 'backup_form_failed')
       alert('Failed to submit application. Please try again or contact us directly.')
     } finally {
       setIsSubmitting(false)

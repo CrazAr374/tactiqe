@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { GoogleAnalytics } from "@/components/analytics"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -164,6 +165,7 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground`}>
+        <GoogleAnalytics />
         {children}
         <Analytics />
       </body>

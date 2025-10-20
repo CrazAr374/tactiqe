@@ -3,6 +3,7 @@
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import ApplicationForm from "@/components/application-form"
+import { trackEvent } from "@/components/analytics"
 import { ExternalLink, FileText } from "lucide-react"
 import { useState } from "react"
 
@@ -10,6 +11,8 @@ export default function Join() {
   const [showBackupForm, setShowBackupForm] = useState(false)
 
   const handleDirectApply = () => {
+    // Track Google Form click
+    trackEvent('click', 'application', 'google_form_direct')
     window.open('https://docs.google.com/forms/d/e/1FAIpQLScZvLCWhiaYJ2E4c3l1TbbnLruauDXT-IPZUFgvhtxuJ-cWxQ/viewform', '_blank')
   }
 
@@ -130,7 +133,10 @@ export default function Join() {
                 Open in New Tab <ExternalLink size={14} />
               </button>
               <button
-                onClick={() => setShowBackupForm(!showBackupForm)}
+                onClick={() => {
+                  trackEvent('click', 'application', 'backup_form_toggle')
+                  setShowBackupForm(!showBackupForm)
+                }}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-colors text-sm"
               >
                 Use Backup Form <FileText size={14} />
