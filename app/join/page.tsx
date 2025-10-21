@@ -2,19 +2,8 @@
 
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
-import ApplicationForm from "@/components/application-form"
-import { trackEvent } from "@/components/analytics"
-import { ExternalLink, FileText } from "lucide-react"
-import { useState } from "react"
 
 export default function Join() {
-  const [showBackupForm, setShowBackupForm] = useState(false)
-
-  const handleDirectApply = () => {
-    // Track Google Form click
-    trackEvent('click', 'application', 'google_form_direct')
-    window.open('https://docs.google.com/forms/d/e/1FAIpQLScZvLCWhiaYJ2E4c3l1TbbnLruauDXT-IPZUFgvhtxuJ-cWxQ/viewform', '_blank')
-  }
 
   return (
     <main className="min-h-screen bg-background">
@@ -67,95 +56,28 @@ export default function Join() {
             </p>
           </div>
 
-          {/* Quick Apply Button */}
-          <div className="text-center mb-8">
-            <button
-              onClick={handleDirectApply}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 hover:scale-105 transition-all shadow-lg hover:shadow-primary/25 text-sm sm:text-base"
-            >
-              Apply Now <ExternalLink size={18} />
-            </button>
-          </div>
 
-          {/* Notice about Form Access */}
-          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-xl p-6 mb-8">
-            <div className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full bg-yellow-400 flex-shrink-0 mt-0.5"></div>
-              <div>
-                <h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
-                  Form Access Notice
-                </h3>
-                <p className="text-sm text-yellow-700 dark:text-yellow-300 mb-3">
-                  Our application form opens in a new tab for the best experience. No Google account required!
-                </p>
-                <button
-                  onClick={handleDirectApply}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg transition-colors text-sm font-medium"
-                >
-                  Open Application Form <ExternalLink size={16} />
-                </button>
-              </div>
-            </div>
-          </div>
 
-          {/* Alternative: Try embedded form */}
-          <details className="bg-secondary/20 border border-border rounded-2xl overflow-hidden shadow-lg">
-            <summary className="p-6 cursor-pointer hover:bg-secondary/30 transition-colors font-medium">
-              Try Embedded Form (Click to expand)
-            </summary>
+          {/* Application Form */}
+          <div className="bg-secondary/20 border border-border rounded-2xl overflow-hidden shadow-lg">
             <div className="border-t border-border">
               <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLScZvLCWhiaYJ2E4c3l1TbbnLruauDXT-IPZUFgvhtxuJ-cWxQ/viewform?embedded=true"
+                src="https://form.svhrt.com/68f7033829019a1d1d2cd8e7"
                 width="100%"
-                height="2130"
+                height="800"
                 title="Tactiqe Application Form"
                 className="w-full"
                 style={{ 
-                  minHeight: '2130px',
+                  minHeight: '800px',
                   border: 'none'
                 }}
               >
                 Loading…
               </iframe>
             </div>
-          </details>
-
-          {/* Form Options */}
-          <div className="mt-6 text-center space-y-4">
-            <p className="text-sm text-muted-foreground">
-              Having trouble with the Google Form? 
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button
-                onClick={handleDirectApply}
-                className="inline-flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-secondary transition-colors text-sm"
-              >
-                Open in New Tab <ExternalLink size={14} />
-              </button>
-              <button
-                onClick={() => {
-                  trackEvent('click', 'application', 'backup_form_toggle')
-                  setShowBackupForm(!showBackupForm)
-                }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-colors text-sm"
-              >
-                Use Backup Form <FileText size={14} />
-              </button>
-            </div>
           </div>
 
-          {/* Backup Application Form */}
-          {showBackupForm && (
-            <div className="mt-8 bg-secondary/10 border border-border rounded-2xl p-6">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold mb-2">Alternative Application Form</h3>
-                <p className="text-sm text-muted-foreground">
-                  Fill out this form if you're having issues with the Google Form above
-                </p>
-              </div>
-              <ApplicationForm />
-            </div>
-          )}
+
 
           {/* Additional Information */}
           <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
