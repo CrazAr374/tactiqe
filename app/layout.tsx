@@ -6,7 +6,6 @@ import { GoogleAnalytics } from "@/components/analytics"
 import PerformanceMonitor from "@/components/performance-monitor"
 import ServiceWorkerRegistration from "@/components/service-worker-registration"
 import "./globals.css"
-import "../styles/optimized.css"
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
