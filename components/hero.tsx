@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight, Sparkles } from "./icons"
 import Link from "next/link"
 
 export default function Hero() {
