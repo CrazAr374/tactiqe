@@ -19,7 +19,12 @@
       "type": "image/png"
     }
   ],
-  "categories": ["education", "developer", "community", "open-source"],
+  "categories": [
+    "education",
+    "developer",
+    "community",
+    "open-source"
+  ],
   "lang": "en",
   "scope": "/",
   "screenshots": [
