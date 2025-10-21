@@ -135,7 +135,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 mb-4 sm:mb-6 px-3 sm:px-4 py-2 bg-secondary/80 backdrop-blur-sm border border-border rounded-full animate-scale-in">
             <Sparkles size={16} className="text-primary" />
-            <p className="text-xs sm:text-sm text-muted-foreground">Open-Source Community for Builders</p>
+            <p className="text-xs sm:text-sm text-muted-foreground">Open-Source Community for Students</p>
           </div>
 
           <h1
