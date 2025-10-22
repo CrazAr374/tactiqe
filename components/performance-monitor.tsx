@@ -26,7 +26,10 @@ export default function PerformanceMonitor() {
         for (const entry of list.getEntries()) {
           switch (entry.entryType) {
             case 'first-input':
-              console.log('FID:', entry.processingStart - entry.startTime)
+              // processingStart exists on PerformanceEventTiming in supported browsers; guard to satisfy TypeScript
+              if ('processingStart' in entry && typeof (entry as any).processingStart === 'number') {
+                console.log('FID:', (entry as any).processingStart - entry.startTime)
+              }
               break
             case 'layout-shift':
               if (!(entry as any).hadRecentInput) {

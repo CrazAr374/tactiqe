@@ -149,9 +149,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed px-2">
-            Tactiqe is India's premier open source community and student-led initiative that bridges the gap between learning and doing through tactical approaches.
-            Collaborate with developers, build real-world software projects, deploy innovative solutions, and gain professional
-            exposure. Transform your ideas into tangible impact within our thriving open source community of innovators and strategic thinkers.
+          Tactiqe brings together students who love creating, experimenting, and deploying. From brainstorming to real-world launch, every project is an opportunity to learn, grow, and make something meaningful together.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-4">
@@ -195,7 +193,7 @@ export default function Hero() {
             <div className="p-6 sm:p-8 bg-gradient-to-br from-secondary/50 to-secondary/30 backdrop-blur-sm border border-border rounded-2xl">
               <h3 className="text-lg sm:text-xl font-semibold mb-3">Ready to Build Something Amazing?</h3>
               <p className="text-sm sm:text-base text-muted-foreground mb-4">
-                Join our community of innovators and start your journey from idea to execution today.
+                Join a fast-growing student community where ideas turn into live projects. Collaborate with peers, gain real development experience, and bring your concepts to life through teamwork and execution.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
