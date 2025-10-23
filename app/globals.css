@@ -400,21 +400,6 @@
   animation: float-reverse 4s ease-in-out infinite;
 }
 
-/* Utility for display font to avoid inline styles */
-.font-display {
-  font-family: var(--font-display);
-}
-
-/* House glow helpers */
-.house-glow {
-  box-shadow: 0 8px 30px rgba(242, 201, 76, 0.06);
-}
-
-.house-glow-red { box-shadow: 0 8px 30px rgba(220, 38, 38, 0.14); }
-.house-glow-blue { box-shadow: 0 8px 30px rgba(37, 99, 235, 0.14); }
-.house-glow-yellow { box-shadow: 0 8px 30px rgba(234, 179, 8, 0.14); }
-.house-glow-green { box-shadow: 0 8px 30px rgba(16, 185, 129, 0.14); }
-
 .animate-particle-float {
   animation: particle-float 6s ease-in-out infinite;
 }
