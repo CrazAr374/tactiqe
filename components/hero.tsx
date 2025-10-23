@@ -137,7 +137,6 @@ export default function Hero() {
             <Sparkles size={16} className="text-primary" />
             <p className="text-xs sm:text-sm text-muted-foreground">Open-Source Community for Students</p>
           </div>
-
           <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight px-2"
             style={{ fontFamily: "var(--font-display)" }}
