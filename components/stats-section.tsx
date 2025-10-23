@@ -30,6 +30,24 @@ export default function StatsSection() {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4">
             Growing Community of Innovators
           </h2>
+
+          {/* Product Hunt Badge */}
+          <div className="flex justify-center my-6 sm:my-8">
+            <a
+              href="https://www.producthunt.com/products/tactiqe?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-tactiqe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1030066&theme=neutral&t=1761230880312"
+                alt="Tactiqe - Open-source student community for real-world building | Product Hunt"
+                className="w-[250px] h-[54px]"
+                width={250}
+                height={54}
+              />
+            </a>
+          </div>
+
           <p className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-3xl mx-auto">
             Join students building the future through collaboration and innovation
           </p>
